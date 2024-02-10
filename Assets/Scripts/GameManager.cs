@@ -7,8 +7,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int userGold, userWheat;
-    public TextMeshProUGUI goldText, wheatText;
+    public int userGold, userWheat, userEggs, userMilk, userBread;
+    public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText;
     public CustomCursor buildingCursor;
     public GameObject gridParent, tilePrefab;
     public Building buildingToPlace;
@@ -32,11 +32,29 @@ public class GameManager : MonoBehaviour
 
             if(!nearestTile.isOccupied)
             {
-                Instantiate(buildingToPlace, nearestTile.transform.position, Quaternion.identity);
+                Instantiate(buildingToPlace, nearestTile.transform.position + new Vector3(0, 0, 1), Quaternion.identity);
+                nearestTile.isOccupied = true;
                 BoughtBuilding();
             }
         }
-        //goldText.text = userGold + "";
+
+        /*
+        goldText.text = formatText(userGold);
+        breadText.text = formatText(userBread);
+        milkText.text = formatText(userMilk);
+        eggText.text = formatText(userEggs);
+        wheatText.text = formatText(userWheat);
+        */
+    }
+
+    private string formatText(int num)
+    {
+        if(num > 100)
+        {
+            float log = Mathf.Log10(num);
+            return (num/log) + "e" + (int)log;
+        }
+        return "" + num;
     }
 
     private void Start()

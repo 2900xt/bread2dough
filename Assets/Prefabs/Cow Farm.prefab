@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6935104890235718189
+--- !u!1 &5756943883569628304
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5599799912274169309}
-  - component: {fileID: 8897264277636104600}
-  - component: {fileID: 4829779284156027422}
+  - component: {fileID: 7378479573798817000}
+  - component: {fileID: 3702980515617407440}
+  - component: {fileID: 2936338946835810053}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: Cow Farm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5599799912274169309
+--- !u!4 &7378479573798817000
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6935104890235718189}
+  m_GameObject: {fileID: 5756943883569628304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 145.44446, y: -86.74261, z: -6.3335347}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8897264277636104600
+--- !u!212 &3702980515617407440
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6935104890235718189}
+  m_GameObject: {fileID: 5756943883569628304}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,31 +74,29 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 655943832, guid: 57525df702feccd4985c91b8e35de991, type: 3}
-  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
+  m_Sprite: {fileID: -889483563, guid: b9cc48ba481253b43a3aac46c84cbe4d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.85, y: 5.79}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4829779284156027422
+--- !u!114 &2936338946835810053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6935104890235718189}
+  m_GameObject: {fileID: 5756943883569628304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c107e3669ce0b4089dd44b30c4f27c, type: 3}
+  m_Script: {fileID: 11500000, guid: f9b50fec45b597d4aa93d3bd9ac5fb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOccupied: 0
-  building: {fileID: 0}
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  unavailiableColor: {r: 1, g: 1, b: 1, a: 0}
-  rend: {fileID: 8897264277636104600}
+  cost: 10
+  buildingType: 2
+  timer: 0
