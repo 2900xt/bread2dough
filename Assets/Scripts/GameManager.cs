@@ -9,33 +9,40 @@ public class GameManager : MonoBehaviour
 {
     public int userGold, userWheat, userEggs, userMilk, userBread;
     public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText;
-    public CustomCursor buildingCursor;
-    public GameObject gridParent, tilePrefab;
+    public CustomCursor buildingCursor, progressCursor;
+    public GameObject gridParent, tilePrefab, progBar;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && buildingToPlace != null)
-        {
-            Tile nearestTile = null;
-            float nearestDist = float.MaxValue;
-            foreach(Tile tile in tiles)
-            {
-                float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                if(dist < nearestDist)
-                {
-                    nearestDist = dist;
-                    nearestTile = tile;
-                }
-            }
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Tile nearestTile = getClosestTile(mousePosition);
 
-            if(!nearestTile.isOccupied)
+        if(nearestTile != null)
+        {
+            if(Input.GetMouseButtonDown(0) && buildingToPlace != null && !nearestTile.isOccupied)
             {
-                Instantiate(buildingToPlace, nearestTile.transform.position + new Vector3(0, 0, 1), Quaternion.identity);
+                Building bd = Instantiate(buildingToPlace, nearestTile.transform.position + new Vector3(0, 0, 1), Quaternion.identity).GetComponent<Building>();
                 nearestTile.isOccupied = true;
+                nearestTile.building = bd;
                 BoughtBuilding();
             }
+            else if(nearestTile.isOccupied && buildingToPlace == null)
+            {
+                progBar.SetActive(true);
+                float prog = nearestTile.building.GetProgress();
+                progBar.GetComponent<ProgressBar>().SetProgress(prog);
+                progBar.transform.position = new Vector3(mousePosition.x, mousePosition.y + 2, -3);
+            }
+            else 
+            {
+                progBar.SetActive(false);
+            }
+        }
+        else 
+        {
+            progBar.SetActive(false);
         }
 
         /*
@@ -45,6 +52,27 @@ public class GameManager : MonoBehaviour
         eggText.text = formatText(userEggs);
         wheatText.text = formatText(userWheat);
         */
+        
+        
+    }
+
+    public Tile getClosestTile(Vector2 pos)
+    {
+        Tile nearestTile = null;
+        float nearestDist = float.MaxValue;
+        foreach(Tile tile in tiles)
+        {
+            float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            if(dist < nearestDist)
+            {
+                nearestDist = dist;
+                nearestTile = tile;
+            }
+        }
+
+        if(nearestDist > tileSize) return null;
+
+        return nearestTile;
     }
 
     private string formatText(int num)
@@ -89,6 +117,7 @@ public class GameManager : MonoBehaviour
         buildingCursor.gameObject.SetActive(true);
         buildingCursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
         Cursor.visible = false;
+        Tile.placing = true;
     }
 
     public void BoughtBuilding()
@@ -96,5 +125,6 @@ public class GameManager : MonoBehaviour
         buildingToPlace = null;
         buildingCursor.gameObject.SetActive(false);
         Cursor.visible = true;
+        Tile.placing = false;
     }
 }

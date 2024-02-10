@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
 {
+    public static bool placing = false;
     public bool isOccupied;
     public Building building;
-    public Color availableColor, unavailiableColor;
+    public Color normalColor, placedColor;
     public SpriteRenderer rend;
     private void Update()
     {
         if(isOccupied)
         {
-            rend.color = unavailiableColor;
+            rend.color = placedColor;
         }
-        else 
-        {
-            rend.color = availableColor;
-        }
+        else rend.color = normalColor;
     }
 }

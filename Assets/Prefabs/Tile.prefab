@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   building: {fileID: 0}
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  unavailiableColor: {r: 1, g: 1, b: 1, a: 0}
+  availableColor: {r: 0.18828177, g: 1, b: 0, a: 0.4117647}
+  unavailiableColor: {r: 1, g: 0, b: 0, a: 0.57254905}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  placedColor: {r: 0, g: 0, b: 0, a: 0}
   rend: {fileID: 8897264277636104600}

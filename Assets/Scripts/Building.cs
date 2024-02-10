@@ -14,6 +14,39 @@ public class Building : MonoBehaviour
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    public float GetProgress()
+    {
+        float denominator = 0;
+        timer -= Time.deltaTime;
+
+        switch(buildingType)
+        {
+            case TYPE_WHEAT_FARM:
+            {
+                denominator = wheatGenTime;
+                break;
+            }
+            case TYPE_MILK_FARM:
+            {
+                denominator = milkGenTime;
+                break;
+            }
+            case TYPE_EGG_FARM:
+            {
+                denominator = eggGenTime;
+                break;
+            }
+            case TYPE_BREAD_FACTORY:
+            {
+                denominator = breadGenTime;
+                break;
+            }
+            default: break;
+        }
+
+        return (denominator - timer) / denominator;
+    }
+
     void Update()
     {
         timer -= Time.deltaTime;
@@ -24,7 +57,7 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer = wheatGenTime;
-                    gameMgr.userWheat++; 
+                    gameMgr.userWheat++;
                 }
                 break;
             }
@@ -50,10 +83,15 @@ public class Building : MonoBehaviour
             {
                 if(timer < 0)
                 {
+                    timer += Time.deltaTime;
                     if(gameMgr.userEggs >= 2 && gameMgr.userMilk >= 1 && gameMgr.userWheat >= 3)
                     {
                         timer = breadGenTime;
                         gameMgr.userBread++;
+
+                        gameMgr.userEggs -= 2;
+                        gameMgr.userMilk -= 1;
+                        gameMgr.userWheat -= 3;
                     }
                 }
                 break;

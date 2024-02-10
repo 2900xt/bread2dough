@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1120393248144013369}
   - component: {fileID: 1936597853370454516}
   - component: {fileID: 6805873309230933296}
+  - component: {fileID: 5765900647947462574}
   m_Layer: 0
   m_Name: Wheat Farm
   m_TagString: Untagged
@@ -100,3 +101,18 @@ MonoBehaviour:
   cost: 10
   buildingType: 1
   timer: 0
+--- !u!114 &5765900647947462574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209631306079334733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a479b134afdec4cbf0891473f75374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1936597853370454516}
+  stage1: {fileID: -1810732526, guid: a3ad0742e95b7da48ae01fc2c8e0b4f3, type: 3}
+  stage2: {fileID: 325824942, guid: a2e8edce9d65f644291f4eecce593504, type: 3}
