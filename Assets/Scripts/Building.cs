@@ -57,7 +57,7 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer = wheatGenTime;
-                    gameMgr.userWheat += 3;
+                    gameMgr.userWheat += 5;
                 }
                 break;
             }
@@ -66,7 +66,7 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer = milkGenTime;
-                    gameMgr.userMilk++; 
+                    gameMgr.userMilk += 5;
                 }
                 break;
             }
@@ -75,7 +75,7 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer = eggGenTime;
-                    gameMgr.userEggs++; 
+                    gameMgr.userEggs += 5;
                 }
                 break;
             }

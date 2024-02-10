@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37ceff5b1261f7648a6ca9d9e4cf3848
+guid: 57525df702feccd4985c91b8e35de991
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 244, y: 248, z: 243, w: 205}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wheattile_0
+      name: emptyfarmtile_0
       rect:
         serializedVersion: 2
-        x: 241
+        x: 247
         y: 251
-        width: 604
-        height: 640
+        width: 585
+        height: 579
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,50 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb0940a5b8ab2134f8320072027b7a64
-      internalID: 325824942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wheattile_1
-      rect:
-        serializedVersion: 2
-        x: 843
-        y: 514
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cd897b8bde8e4c43bb3982d9987225d
-      internalID: 1507224144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wheattile_2
-      rect:
-        serializedVersion: 2
-        x: 841
-        y: 459
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b353d8ec5fdde8647ad9a6e2c48c35d8
-      internalID: -1511989843
+      spriteID: 8125a14aa186c904bbc3846251014767
+      internalID: 655943832
       vertices: []
       indices: 
       edges: []
@@ -202,16 +160,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wheattile_0: 325824942
-      wheattile_1: 1507224144
-      wheattile_2: -1511989843
+      emptyfarmtile_0: 655943832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

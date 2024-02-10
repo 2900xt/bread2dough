@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37ceff5b1261f7648a6ca9d9e4cf3848
+guid: 86fb37cf319f0724ba198c58e5000718
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 244, y: 248, z: 243, w: 205}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wheattile_0
+      name: factorykit_0
       rect:
         serializedVersion: 2
-        x: 241
-        y: 251
-        width: 604
-        height: 640
+        x: 73
+        y: 393
+        width: 268
+        height: 401
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb0940a5b8ab2134f8320072027b7a64
-      internalID: 325824942
+      spriteID: afe0b4a29a79c294bb4fdad75e153bf9
+      internalID: -2001142799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wheattile_1
+      name: factorykit_1
       rect:
         serializedVersion: 2
-        x: 843
-        y: 514
-        width: 7
-        height: 8
+        x: 375
+        y: 692
+        width: 142
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd897b8bde8e4c43bb3982d9987225d
-      internalID: 1507224144
+      spriteID: 37f4ff9331f3088459721b89e59e8af4
+      internalID: -1108782669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wheattile_2
+      name: factorykit_2
       rect:
         serializedVersion: 2
-        x: 841
-        y: 459
-        width: 6
-        height: 7
+        x: 369
+        y: 511
+        width: 149
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b353d8ec5fdde8647ad9a6e2c48c35d8
-      internalID: -1511989843
+      spriteID: 10bb436702db0624681f8a47f5c80119
+      internalID: 541493596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: factorykit_3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 399
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f931d82397c2664b9ac689d9a0a45f0
+      internalID: 271380271
       vertices: []
       indices: 
       edges: []
@@ -201,17 +222,18 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 10ab87c9f26519b49ad6676bec7d0f04
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wheattile_0: 325824942
-      wheattile_1: 1507224144
-      wheattile_2: -1511989843
+      factorykit_0: -2001142799
+      factorykit_1: -1108782669
+      factorykit_2: 541493596
+      factorykit_3: 271380271
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
