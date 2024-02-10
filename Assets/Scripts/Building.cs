@@ -7,7 +7,7 @@ public class Building : MonoBehaviour
     public int cost, buildingType;
     public const int TYPE_WHEAT_FARM = 1, TYPE_MILK_FARM = 2, TYPE_EGG_FARM = 3, TYPE_BREAD_FACTORY = 4;
     public float timer;
-    public static float wheatGenTime = 5, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5;
+    public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5;
     public static GameManager gameMgr;
     void Start()
     {
@@ -57,7 +57,7 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer = wheatGenTime;
-                    gameMgr.userWheat++;
+                    gameMgr.userWheat += 3;
                 }
                 break;
             }

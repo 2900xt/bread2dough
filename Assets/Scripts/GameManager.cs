@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int userGold, userWheat, userEggs, userMilk, userBread;
+    public int userGold, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userCosmicBread, userTachyonBread;
     public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText;
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
@@ -45,15 +45,12 @@ public class GameManager : MonoBehaviour
             progBar.SetActive(false);
         }
 
-        /*
+        
         goldText.text = formatText(userGold);
         breadText.text = formatText(userBread);
         milkText.text = formatText(userMilk);
         eggText.text = formatText(userEggs);
         wheatText.text = formatText(userWheat);
-        */
-        
-        
     }
 
     public Tile getClosestTile(Vector2 pos)
