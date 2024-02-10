@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject gridParent, tilePrefab;
     public Building buildingToPlace;
     public List<Tile> tiles;
-    public int tileSize, tileStartX, tileStartY, gridLength;
+    public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
     private void Update()
     {
         if(Input.GetMouseButtonDown(0) && buildingToPlace != null)
@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
 
     public void SpawnTiles()
     {
-        int endX = tileStartX + tileSize * gridLength;
-        int endY = tileStartY + tileSize * gridLength;
+        int endX = tileStartX + tileSize * gridXLength;
+        int endY = tileStartY + tileSize * gridYLength;
         for(int x = tileStartX; x < endX; x += tileSize)
         {
             for(int y = tileStartY; y < endY; y += tileSize)
@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
         
         userGold -= building.cost;
         buildingToPlace = building;
-        gridParent.SetActive(true);
         buildingCursor.gameObject.SetActive(true);
         buildingCursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
         Cursor.visible = false;
@@ -95,7 +94,6 @@ public class GameManager : MonoBehaviour
     public void BoughtBuilding()
     {
         buildingToPlace = null;
-        gridParent.SetActive(false);
         buildingCursor.gameObject.SetActive(false);
         Cursor.visible = true;
     }
