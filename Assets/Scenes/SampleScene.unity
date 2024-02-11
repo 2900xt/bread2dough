@@ -425,7 +425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 795.5, y: 74.7}
+  m_AnchoredPosition: {x: 800.05975, y: 74.7}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &49262961
@@ -499,7 +499,7 @@ RectTransform:
   m_Father: {fileID: 1953077587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Meteor Farm 10
+  m_text: Meteor Farm 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -2194,7 +2194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 569.5598, y: -241.5}
+  m_AnchoredPosition: {x: 578.51965, y: -243.99998}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &380639293
@@ -3052,7 +3052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 792.2, y: -84}
+  m_AnchoredPosition: {x: 804.9, y: -84}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &446016673
@@ -3753,7 +3753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &526927497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gold Mine      10
+  m_text: Gold Mine      100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Egg Farm       10
+  m_text: Egg Farm        25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -6429,7 +6429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Solar Panel      10
+  m_text: Solar Panel      250
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -7049,6 +7049,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7130,6 +7131,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &963194229
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d231999bc70fe3a489296fc44cb15662, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.102
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &996110593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7239,7 +7336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 795.5, y: -243.99998}
+  m_AnchoredPosition: {x: 817.65985, y: -243.99998}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &1008771107
@@ -7330,7 +7427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.09411766, g: 0.09411766, b: 0.09411766, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7696,7 +7793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Milk Farm      10
+  m_text: Milk Farm      25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -13679,7 +13776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 682.99994, y: -243.99998}
+  m_AnchoredPosition: {x: 694.6, y: -243.99998}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &1208657826
@@ -14113,7 +14210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 683, y: 74.7}
+  m_AnchoredPosition: {x: 688.5598, y: 74.7}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &1234908944
@@ -14322,7 +14419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 682.99994, y: -84}
+  m_AnchoredPosition: {x: 694.6, y: -84}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &1245926578
@@ -14985,7 +15082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1454757701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15500,7 +15597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accelerator    10
+  m_text: Accelerator    800
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -15634,7 +15731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shiny Factory 10
+  m_text: Shiny Factory 150
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -15819,7 +15916,7 @@ RectTransform:
   m_Father: {fileID: 361424280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17008,7 +17105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 566.3, y: -84}
+  m_AnchoredPosition: {x: 578.5197, y: -84}
   m_SizeDelta: {x: 28.0578, y: 24.1146}
   m_Pivot: {x: 4.5188403, y: 0.50000113}
 --- !u!114 &1699361328
@@ -17106,7 +17203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tachyon Factory 10
+  m_text: Tachyon Factory 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -17799,7 +17896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bread Factory 10
+  m_text: Bread Factory 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -23366,7 +23463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade04dd9c09338c41923665450c4ab67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userCoins: 100
+  userCoins: 20
   userWheat: 0
   userEggs: 0
   userMilk: 0
@@ -23508,7 +23605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nebula Factory 10
+  m_text: Nebula Factory 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
@@ -23868,7 +23965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Solar Factory 10
+  m_text: Solar Factory 325
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
   m_sharedMaterial: {fileID: -8012323767549378807, guid: 32335e581a464024fbe22dae97f149a3, type: 2}
