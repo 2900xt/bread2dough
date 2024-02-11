@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public int userCoins, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegeCount;
     public int userGold, lightJars, cosmicShards, tachyonParticle;
     public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText, shinyBreadText, solarBreadText, nebulaBreadText, tachyonBreadText, prestiegePercent;
+    public TextMeshProUGUI goldBarText, lightText, cosmicDust, tachyonParticleText;
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
-    public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2;
+    public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2, pShiny3, pSolar3, pNebula3, pTachyon3, pShiny4, pSolar4, pNebula4, pTachyon4;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
@@ -84,6 +85,10 @@ public class GameManager : MonoBehaviour
         tachyonSell.gameObject.transform.parent.gameObject.SetActive(userTachyonBread != 0);
         solarSell.gameObject.transform.parent.gameObject.SetActive(userSolarBread != 0);
 
+        goldBarText.text = formatText(userGold);
+        lightText.text = formatText(lightJars);
+        cosmicDust.text = formatText(cosmicShards);
+        tachyonParticleText.text = formatText(tachyonParticle);
 
         float val = (float)userPrestiegeCount / prestiegeCountNeeded;
         val = Mathf.Min(val, 1f);
@@ -143,31 +148,35 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Prestiege", 1);
+        PlayerPrefs.SetInt("Prestiege", 3);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {
             pShiny.SetActive(false);
             pShiny2.SetActive(false);
-            pShiny2.transform.parent.GetComponent<Button>().interactable = true;
+            pShiny3.SetActive(false);
+            pShiny4.SetActive(false);
         }
         if(prestiegeLevel >= 3)
         {
             pSolar.SetActive(false);
             pSolar2.SetActive(false);
-            pSolar2.transform.parent.GetComponent<Button>().interactable = true;
+            pSolar3.SetActive(false);
+            pSolar4.SetActive(false);
         }
         if(prestiegeLevel >= 4)
         {
             pNebula.SetActive(false);
             pNebula2.SetActive(false);
-            pNebula2.transform.parent.GetComponent<Button>().interactable = true;
+            pNebula3.SetActive(false);
+            pNebula4.SetActive(false);
         }
         if(prestiegeLevel >= 5)
         {
             pTachyon.SetActive(false);
             pTachyon2.SetActive(false);
-            pTachyon2.transform.parent.GetComponent<Button>().interactable = true;
+            pTachyon3.SetActive(false);
+            pTachyon4.SetActive(false);
         }
 
         prestiegeCountNeeded = (6 - prestiegeLevel) * 50;
@@ -197,7 +206,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        userCoins -= building.cost;
         buildingToPlace = building;
         buildingCursor.gameObject.SetActive(true);
         buildingCursor.GetComponent<SpriteRenderer>().sprite = building.sprite;
@@ -207,6 +215,7 @@ public class GameManager : MonoBehaviour
 
     public void BoughtBuilding()
     {
+        userCoins -= buildingToPlace.cost;
         buildingToPlace = null;
         buildingCursor.gameObject.SetActive(false);
         Cursor.visible = true;

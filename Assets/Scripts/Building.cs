@@ -16,10 +16,10 @@ public class Building : MonoBehaviour
     {
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
         wheatGenTime = 15.0f / gameMgr.prestiegeLevel;
-        eggGenTime = 5.0f / gameMgr.prestiegeLevel;
-        milkGenTime = 5.0f / gameMgr.prestiegeLevel;
-        breadGenTime = 5.0f / gameMgr.prestiegeLevel;
-        resourceGenTime = 5.0f / gameMgr.prestiegeLevel;
+        eggGenTime = 15.0f / gameMgr.prestiegeLevel;
+        milkGenTime = 15.0f / gameMgr.prestiegeLevel;
+        breadGenTime = 15.0f / gameMgr.prestiegeLevel;
+        resourceGenTime = 15.0f / gameMgr.prestiegeLevel;
     }
 
     public float GetProgress()
@@ -63,7 +63,7 @@ public class Building : MonoBehaviour
             default: break;
         }
 
-        return (denominator - timer) / denominator;
+        return Mathf.Min((denominator - timer) / denominator, 1f);
     }
 
     void Update()
@@ -139,14 +139,14 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userEggs >= 2 && gameMgr.userMilk >= 1 && gameMgr.userWheat >= 3)
+                    if(gameMgr.userEggs >= 1 && gameMgr.userMilk >= 1 && gameMgr.userWheat >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userBread++;
 
-                        gameMgr.userEggs -= 2;
+                        gameMgr.userEggs -= 1;
                         gameMgr.userMilk -= 1;
-                        gameMgr.userWheat -= 3;
+                        gameMgr.userWheat -= 1;
                         if(gameMgr.prestiegeLevel == 1)
                         {
                             gameMgr.userPrestiegeCount++;

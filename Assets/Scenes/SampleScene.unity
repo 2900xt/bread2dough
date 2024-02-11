@@ -23366,7 +23366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade04dd9c09338c41923665450c4ab67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userCoins: 0
+  userCoins: 100
   userWheat: 0
   userEggs: 0
   userMilk: 0
@@ -23390,6 +23390,10 @@ MonoBehaviour:
   nebulaBreadText: {fileID: 1037788499}
   tachyonBreadText: {fileID: 399793752}
   prestiegePercent: {fileID: 272357957}
+  goldBarText: {fileID: 99589694}
+  lightText: {fileID: 1828880897}
+  cosmicDust: {fileID: 756365863}
+  tachyonParticleText: {fileID: 741324747}
   wheatSell: {fileID: 1131033553}
   milkSell: {fileID: 259797913}
   eggSell: {fileID: 30283702}
@@ -23411,6 +23415,14 @@ MonoBehaviour:
   pSolar2: {fileID: 1224152536}
   pNebula2: {fileID: 501106025}
   pTachyon2: {fileID: 583280832}
+  pShiny3: {fileID: 513003666}
+  pSolar3: {fileID: 1449023837}
+  pNebula3: {fileID: 1216602195}
+  pTachyon3: {fileID: 2079371135}
+  pShiny4: {fileID: 1936511095}
+  pSolar4: {fileID: 410734690}
+  pNebula4: {fileID: 1610491554}
+  pTachyon4: {fileID: 1667808118}
   buildingToPlace: {fileID: 0}
   tiles: []
   tileSize: 8

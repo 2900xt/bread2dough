@@ -269,8 +269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 25
-  buildingType: 4
+  buildingType: 5
   timer: 0
+  sprite: {fileID: 0}
 --- !u!95 &761570932944033769
 Animator:
   serializedVersion: 5
