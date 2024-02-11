@@ -271,7 +271,7 @@ MonoBehaviour:
   cost: 325
   buildingType: 6
   timer: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 46937706db659f04f8834526fa0f289e, type: 3}
   prestiegeRequired: 3
 --- !u!95 &761570932944033769
 Animator:

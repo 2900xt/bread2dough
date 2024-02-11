@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Tile nearestTile = getClosestTile(mousePosition);
+        Tile nearestTile = GetClosestTile(mousePosition);
 
         if(deletingTile && nearestTile != null && nearestTile.isOccupied && Input.GetMouseButtonDown(0))
         {
@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public Tile getClosestTile(Vector2 pos)
+    public Tile GetClosestTile(Vector2 pos)
     {
         Tile nearestTile = null;
         float nearestDist = float.MaxValue;
@@ -156,12 +156,6 @@ public class GameManager : MonoBehaviour
 
     private string formatText(int num)
     {
-        if(num > 1000)
-        {
-            float log = Mathf.Log10(num);
-            int intNum = (int)(num / Mathf.Pow(10, log));
-            return (num) + "e" + (int)log;
-        }
         return "" + num;
     }
 
@@ -192,6 +186,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("Prestiege", 5);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {
@@ -222,7 +217,7 @@ public class GameManager : MonoBehaviour
             pTachyon4.SetActive(false);
         }
 
-        prestiegeCountNeeded = (6 - prestiegeLevel) * 15;
+        prestiegeCountNeeded = (6 - prestiegeLevel) * 10;
         
         SpawnTiles();
     }
