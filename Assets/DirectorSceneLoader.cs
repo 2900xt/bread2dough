@@ -19,7 +19,7 @@ public class DirectorSceneLoader : MonoBehaviour
     void OnPlayableDirectorStopped(PlayableDirector aDirector)
     {
         if(director == aDirector){
-            PlayerPrefs.SetInt("Presteige", PresteigetoLoad);
+            PlayerPrefs.SetInt("Prestiege", PresteigetoLoad);
             SceneManager.LoadScene(2);
         }
     }
