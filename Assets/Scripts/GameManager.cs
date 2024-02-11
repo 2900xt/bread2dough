@@ -186,7 +186,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Prestiege", 5);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {
