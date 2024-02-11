@@ -15,6 +15,11 @@ public class Building : MonoBehaviour
     void Start()
     {
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
+        wheatGenTime = 15.0f / gameMgr.prestiegeLevel;
+        eggGenTime = 5.0f / gameMgr.prestiegeLevel;
+        milkGenTime = 5.0f / gameMgr.prestiegeLevel;
+        breadGenTime = 5.0f / gameMgr.prestiegeLevel;
+        resourceGenTime = 5.0f / gameMgr.prestiegeLevel;
     }
 
     public float GetProgress()
@@ -93,6 +98,42 @@ public class Building : MonoBehaviour
                 }
                 break;
             }
+            case TYPE_GOLD_MINE:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.userGold += 5;
+                }
+                break;
+            }
+            case TYPE_SOLAR_PANEL:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.lightJars += 5;
+                }
+                break;
+            }
+            case TYPE_METEOR_MINE:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.cosmicShards += 5;
+                }
+                break;
+            }
+            case TYPE_ACCELERATOR:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.tachyonParticle += 5;
+                }
+                break;
+            }
             case TYPE_BREAD_FACTORY:
             {
                 if(timer < 0)
@@ -119,11 +160,12 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userBread >= 3)
+                    if(gameMgr.userBread >= 3 && gameMgr.userGold >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userShinyBread++;
                         
+                        gameMgr.userGold -= 1;
                         gameMgr.userBread -= 3;
                         if(gameMgr.prestiegeLevel == 2)
                         {
@@ -138,11 +180,12 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userShinyBread >= 3)
+                    if(gameMgr.userShinyBread >= 3 && gameMgr.lightJars >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userSolarBread++;
 
+                        gameMgr.lightJars -= 1;
                         gameMgr.userShinyBread -= 3;
                         if(gameMgr.prestiegeLevel == 3)
                         {
@@ -157,10 +200,11 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userSolarBread >= 3)
+                    if(gameMgr.userSolarBread >= 3 && gameMgr.cosmicShards >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userNebulaBread++;
+                        gameMgr.cosmicShards -= 1;
 
                         gameMgr.userSolarBread -= 3;
                         if(gameMgr.prestiegeLevel == 4)
@@ -176,12 +220,13 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userNebulaBread >= 3)
+                    if(gameMgr.userNebulaBread >= 3 && gameMgr.tachyonParticle >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userTachyonBread++;
 
                         gameMgr.userNebulaBread -= 3;
+                        gameMgr.tachyonParticle -= 1;
                         if(gameMgr.prestiegeLevel == 5)
                         {
                             gameMgr.userPrestiegeCount++;
