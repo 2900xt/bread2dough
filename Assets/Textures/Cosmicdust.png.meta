@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02fe54f8583dab409f38b89f34dc26f
+guid: 1ae8da8c240987e4da6251dca8fd1122
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tachyon_0
+      name: Cosmicdust_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 298
-        height: 293
+        x: 17
+        y: 31
+        width: 185
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd487af6d7892548a5bbd2e44038ade
-      internalID: 807761276
+      spriteID: 9a43713482711df45a74d39e3b7d3b70
+      internalID: 439491263
       vertices: []
       indices: 
       edges: []
@@ -159,7 +159,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 49789815ed2fccc40b4c51ccf341a00a
     internalID: 0
     vertices: []
     indices: 
@@ -167,7 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tachyon_0: 807761276
+      Cosmicdust_0: 439491263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

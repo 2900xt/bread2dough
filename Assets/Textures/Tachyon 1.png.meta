@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02fe54f8583dab409f38b89f34dc26f
+guid: 1a2d4da77bae1884aa3852c1b6a55126
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tachyon_0
+      name: Tachyon 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 298
-        height: 293
+        x: 672
+        y: 364
+        width: 413
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd487af6d7892548a5bbd2e44038ade
-      internalID: 807761276
+      spriteID: 646f3aa68040aab4cb6d4eec8c660dcd
+      internalID: -536436478
       vertices: []
       indices: 
       edges: []
@@ -167,7 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tachyon_0: 807761276
+      Tachyon 1_0: -536436478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

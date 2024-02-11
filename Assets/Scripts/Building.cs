@@ -7,8 +7,9 @@ public class Building : MonoBehaviour
     public int cost, buildingType;
     public const int TYPE_WHEAT_FARM = 1, TYPE_MILK_FARM = 2, TYPE_EGG_FARM = 3, TYPE_BREAD_FACTORY = 4;
     public const int TYPE_NEB_FACTORY = 5, TYPE_SOL_FACTORY = 6, TYPE_SHINY_FACTORY = 7, TYPE_TACHYON_FACTORY = 8;
+    public const int TYPE_GOLD_MINE = 9, TYPE_SOLAR_PANEL = 10, TYPE_METEOR_MINE = 11, TYPE_ACCELERATOR = 12;
     public float timer;
-    public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5;
+    public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5, resourceGenTime = 5;
     public static GameManager gameMgr;
     public Sprite sprite;
     void Start()
@@ -39,8 +40,19 @@ public class Building : MonoBehaviour
                 break;
             }
             case TYPE_BREAD_FACTORY:
+            case TYPE_NEB_FACTORY:
+            case TYPE_SHINY_FACTORY:
+            case TYPE_SOL_FACTORY:
             {
                 denominator = breadGenTime;
+                break;
+            }
+            case TYPE_GOLD_MINE:
+            case TYPE_METEOR_MINE:
+            case TYPE_SOLAR_PANEL:
+            case TYPE_ACCELERATOR:
+            {
+                denominator = resourceGenTime;
                 break;
             }
             default: break;
