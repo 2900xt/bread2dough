@@ -19,7 +19,7 @@ public class DirectorSceneLoader : MonoBehaviour
     {
         if(director == aDirector){
             PlayerPrefs.SetInt("Presteige", 1);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
 
