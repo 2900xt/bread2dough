@@ -12,6 +12,7 @@ public class Building : MonoBehaviour
     public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5, resourceGenTime = 5;
     public static GameManager gameMgr;
     public Sprite sprite;
+    public int prestiegeRequired;
     void Start()
     {
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -160,13 +161,13 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userBread >= 3 && gameMgr.userGold >= 1)
+                    if(gameMgr.userBread >= 2 && gameMgr.userGold >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userShinyBread++;
                         
                         gameMgr.userGold -= 1;
-                        gameMgr.userBread -= 3;
+                        gameMgr.userBread -= 2;
                         if(gameMgr.prestiegeLevel == 2)
                         {
                             gameMgr.userPrestiegeCount++;
@@ -180,13 +181,13 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userShinyBread >= 3 && gameMgr.lightJars >= 1)
+                    if(gameMgr.userShinyBread >= 2 && gameMgr.lightJars >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userSolarBread++;
 
                         gameMgr.lightJars -= 1;
-                        gameMgr.userShinyBread -= 3;
+                        gameMgr.userShinyBread -= 2;
                         if(gameMgr.prestiegeLevel == 3)
                         {
                             gameMgr.userPrestiegeCount++;
@@ -200,13 +201,13 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userSolarBread >= 3 && gameMgr.cosmicShards >= 1)
+                    if(gameMgr.userSolarBread >= 2 && gameMgr.cosmicShards >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userNebulaBread++;
                         gameMgr.cosmicShards -= 1;
 
-                        gameMgr.userSolarBread -= 3;
+                        gameMgr.userSolarBread -= 2;
                         if(gameMgr.prestiegeLevel == 4)
                         {
                             gameMgr.userPrestiegeCount++;
@@ -220,12 +221,12 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userNebulaBread >= 3 && gameMgr.tachyonParticle >= 1)
+                    if(gameMgr.userNebulaBread >= 2 && gameMgr.tachyonParticle >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userTachyonBread++;
 
-                        gameMgr.userNebulaBread -= 3;
+                        gameMgr.userNebulaBread -= 2;
                         gameMgr.tachyonParticle -= 1;
                         if(gameMgr.prestiegeLevel == 5)
                         {

@@ -101,3 +101,4 @@ MonoBehaviour:
   buildingType: 10
   timer: 0
   sprite: {fileID: 44015115, guid: 4f34318b424aa464c9d5c19b8652b766, type: 3}
+  prestiegeRequired: 3

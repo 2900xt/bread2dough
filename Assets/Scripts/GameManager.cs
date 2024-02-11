@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI goldBarText, lightText, cosmicDust, tachyonParticleText;
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
     [Header ("References")]
-    public CustomCursor buildingCursor, progressCursor;
+    public CustomCursor buildingCursor, progressCursor, deletingCursor;
     public GameObject gridParent, tilePrefab, progBar;
     public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2, pShiny3, pSolar3, pNebula3, pTachyon3, pShiny4, pSolar4, pNebula4, pTachyon4;
     public Building buildingToPlace;
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public Slider prestiegeProgressBar;
     public GameObject prestiegeButton;
     public GameObject shop, ui;
+    public bool deletingTile;
     public int getSellMultiplier(int amount)
     {
         return Mathf.Max(1, amount / 10);
@@ -41,6 +42,15 @@ public class GameManager : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Tile nearestTile = getClosestTile(mousePosition);
+
+        if(deletingTile && nearestTile != null && nearestTile.isOccupied && Input.GetMouseButtonDown(0))
+        {
+            deletingCursor.gameObject.SetActive(false);
+            nearestTile.isOccupied = false;
+            Destroy(nearestTile.building.gameObject);
+            deletingTile = false;
+            Cursor.visible = true;
+        }
 
         if(nearestTile != null)
         {
@@ -116,6 +126,13 @@ public class GameManager : MonoBehaviour
         prestiegeProgressBar.value = val;
 
         prestiegeButton.SetActive(val == 1f);
+    }
+
+    public void deleteTile()
+    {
+        deletingTile = true;
+        deletingCursor.gameObject.SetActive(true);
+        Cursor.visible = false;
     }
 
     public Tile getClosestTile(Vector2 pos)
@@ -205,7 +222,7 @@ public class GameManager : MonoBehaviour
             pTachyon4.SetActive(false);
         }
 
-        prestiegeCountNeeded = (6 - prestiegeLevel) * 30;
+        prestiegeCountNeeded = (6 - prestiegeLevel) * 15;
         
         SpawnTiles();
     }
@@ -228,6 +245,14 @@ public class GameManager : MonoBehaviour
     public void BuyBuilding(Building building)
     {
         PlayClick();
+
+        if(prestiegeLevel < building.prestiegeRequired)
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            popupText("Locked", mousePosition, Color.red);
+            return;
+        }
+
         if(userCoins < building.cost)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

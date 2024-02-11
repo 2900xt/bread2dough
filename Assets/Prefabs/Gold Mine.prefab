@@ -4932,3 +4932,4 @@ MonoBehaviour:
   buildingType: 9
   timer: 0
   sprite: {fileID: -245188627, guid: 7726eb4172083244dbd6b5ab69c08312, type: 3}
+  prestiegeRequired: 2

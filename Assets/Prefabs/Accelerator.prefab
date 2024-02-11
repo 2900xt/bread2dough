@@ -453,6 +453,7 @@ MonoBehaviour:
   buildingType: 12
   timer: 0
   sprite: {fileID: -1929404161, guid: 003cee6a235867247a49a8ea5c51f967, type: 3}
+  prestiegeRequired: 5
 --- !u!95 &8442820463182028794
 Animator:
   serializedVersion: 5

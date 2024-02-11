@@ -272,6 +272,7 @@ MonoBehaviour:
   buildingType: 8
   timer: 0
   sprite: {fileID: 0}
+  prestiegeRequired: 5
 --- !u!95 &761570932944033769
 Animator:
   serializedVersion: 5

@@ -272,6 +272,7 @@ MonoBehaviour:
   buildingType: 7
   timer: 0
   sprite: {fileID: 21300000, guid: 018299cb6c0b6cf41b088118514bed24, type: 3}
+  prestiegeRequired: 2
 --- !u!95 &761570932944033769
 Animator:
   serializedVersion: 5
