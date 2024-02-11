@@ -12,13 +12,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
-    public GameObject pShiny, pSolar, pNebula, pTachyon;
+    public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
     public int prestiegeLevel, prestiegeCountNeeded;
     public Slider prestiegeProgressBar;
     public GameObject prestiegeButton;
+    public GameObject shop, ui;
     public int getSellMultiplier(int amount)
     {
         return Mathf.Max(1, amount / 10);
@@ -127,25 +128,45 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Prestiege", prestiegeLevel + 1);
     }
 
+    public void OpenShop()
+    {
+        shop.SetActive(true);
+        ui.SetActive(false);
+    }
+
+    public void CloseShop()
+    {
+        shop.SetActive(false);
+        ui.SetActive(true);
+    }
+
     private void Start()
     {
-        PlayerPrefs.SetInt("Prestiege", 3);
+        PlayerPrefs.SetInt("Prestiege", 1);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {
             pShiny.SetActive(false);
+            pShiny2.SetActive(false);
+            pShiny2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 3)
         {
             pSolar.SetActive(false);
+            pSolar2.SetActive(false);
+            pSolar2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 4)
         {
             pNebula.SetActive(false);
+            pNebula2.SetActive(false);
+            pNebula2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 5)
         {
             pTachyon.SetActive(false);
+            pTachyon2.SetActive(false);
+            pTachyon2.transform.parent.GetComponent<Button>().interactable = true;
         }
 
         prestiegeCountNeeded = (6 - prestiegeLevel) * 50;
@@ -178,7 +199,7 @@ public class GameManager : MonoBehaviour
         userGold -= building.cost;
         buildingToPlace = building;
         buildingCursor.gameObject.SetActive(true);
-        buildingCursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
+        buildingCursor.GetComponent<SpriteRenderer>().sprite = building.sprite;
         Cursor.visible = false;
         Tile.placing = true;
     }

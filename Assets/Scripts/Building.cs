@@ -10,6 +10,7 @@ public class Building : MonoBehaviour
     public float timer;
     public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5;
     public static GameManager gameMgr;
+    public Sprite sprite;
     void Start()
     {
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
