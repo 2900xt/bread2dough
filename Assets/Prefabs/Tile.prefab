@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 655943832, guid: 57525df702feccd4985c91b8e35de991, type: 3}
+  m_Sprite: {fileID: -889483563, guid: 0bd9d1e196e72c84aa60334cfd47480e, type: 3}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOccupied: 0
   building: {fileID: 0}
-  availableColor: {r: 0.18828177, g: 1, b: 0, a: 0.4117647}
-  unavailiableColor: {r: 1, g: 0, b: 0, a: 0.57254905}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   placedColor: {r: 0, g: 0, b: 0, a: 0}
   rend: {fileID: 8897264277636104600}
