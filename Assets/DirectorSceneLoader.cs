@@ -11,9 +11,17 @@ public class DirectorSceneLoader : MonoBehaviour
     public int PresteigetoLoad;
     public PlayableDirector director;
 
+    public Animator faderAnim;
+    public GameObject fader;
+
+    public int lvlToLoad;
+
+
     void OnEnable()
     {
         if(cutscene){director.stopped += OnPlayableDirectorStopped;}
+        fader =  GameObject.Find("Fader");
+        faderAnim = fader.transform.GetChild(0).GetComponent<Animator>();
     }
 
     void OnPlayableDirectorStopped(PlayableDirector aDirector)
@@ -31,6 +39,12 @@ public class DirectorSceneLoader : MonoBehaviour
 
     public void LoadScene(int i)
     {
-        SceneManager.LoadScene(i);
+        faderAnim.SetTrigger("FadeOut");
+        lvlToLoad = i;
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(lvlToLoad);
     }
 }
