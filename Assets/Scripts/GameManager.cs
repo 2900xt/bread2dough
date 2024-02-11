@@ -8,17 +8,22 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header ("Integers")]
     public int userCoins, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegeCount;
     public int userGold, lightJars, cosmicShards, tachyonParticle;
+    [Header ("Text References")]
     public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText, shinyBreadText, solarBreadText, nebulaBreadText, tachyonBreadText, prestiegePercent;
     public TextMeshProUGUI goldBarText, lightText, cosmicDust, tachyonParticleText;
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
+    [Header ("References")]
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
     public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2, pShiny3, pSolar3, pNebula3, pTachyon3, pShiny4, pSolar4, pNebula4, pTachyon4;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
+    public GameObject popup;
+    [Header ("Prestige")]
     public int prestiegeLevel, prestiegeCountNeeded;
     public Slider prestiegeProgressBar;
     public GameObject prestiegeButton;
@@ -209,6 +214,8 @@ public class GameManager : MonoBehaviour
     {
         if(userCoins < building.cost)
         {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            popupText("Insufficient Funds", mousePosition, Color.red);
             return;
         }
         
@@ -280,5 +287,13 @@ public class GameManager : MonoBehaviour
         int amount = getSellMultiplier(userTachyonBread);
         userTachyonBread -= amount;
         userCoins += amount * 450;
+    }
+
+    public void popupText(string s, Vector2 v, Color c)
+    {
+        
+        TextMeshPro g = Instantiate(popup, new Vector3(v.x, v.y, -5), Quaternion.identity).transform.GetChild(0).GetComponent<TextMeshPro>();
+        g.color = new Color(1f,0f,0f,1f);
+        g.text = s;
     }
 }
