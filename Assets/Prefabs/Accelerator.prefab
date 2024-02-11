@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b50fec45b597d4aa93d3bd9ac5fb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 800
   buildingType: 12
   timer: 0
   sprite: {fileID: -1929404161, guid: 003cee6a235867247a49a8ea5c51f967, type: 3}

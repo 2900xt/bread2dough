@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
             pTachyon4.SetActive(false);
         }
 
-        prestiegeCountNeeded = (6 - prestiegeLevel) * 50;
+        prestiegeCountNeeded = (6 - prestiegeLevel) * 30;
         
         SpawnTiles();
     }
@@ -239,46 +239,46 @@ public class GameManager : MonoBehaviour
     {
         int amount = getSellMultiplier(userMilk);
         userMilk -= amount;
-        userCoins += amount;
+        userCoins += amount * 3;
     }
 
     public void SellEggs()
     {
         int amount = getSellMultiplier(userEggs);
         userEggs -= amount;
-        userCoins += amount;
+        userCoins += amount * 3;
     }
     public void SellBread()
     {
         int amount = getSellMultiplier(userBread);
         userBread -= amount;
-        userCoins += amount * 10;
+        userCoins += amount * 8;
     }
     public void SellShiny()
     {
         int amount = getSellMultiplier(userShinyBread);
         userShinyBread -= amount;
-        userCoins += amount * 100;
+        userCoins += amount * 20;
     }
 
     public void SellSolar()
     {
         int amount = getSellMultiplier(userSolarBread);
         userSolarBread -= amount;
-        userCoins += amount * 1000;
+        userCoins += amount * 65;
     }
 
     public void SellNebula()
     {
         int amount = getSellMultiplier(userNebulaBread);
         userNebulaBread -= amount;
-        userCoins += amount * 10000;
+        userCoins += amount * 175;
     }
 
     public void SellTachyon()
     {
         int amount = getSellMultiplier(userTachyonBread);
         userTachyonBread -= amount;
-        userCoins += amount * 100000;
+        userCoins += amount * 450;
     }
 }
