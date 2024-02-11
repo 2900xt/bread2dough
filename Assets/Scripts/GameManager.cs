@@ -7,18 +7,20 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int userGold, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegeCount;
+    public int userCoins, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegeCount;
+    public int userGold, lightJars, cosmicShards, tachyonParticle;
     public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText, shinyBreadText, solarBreadText, nebulaBreadText, tachyonBreadText, prestiegePercent;
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
-    public GameObject pShiny, pSolar, pNebula, pTachyon;
+    public GameObject pShiny, pSolar, pNebula, pTachyon, pShiny2, pSolar2, pNebula2, pTachyon2;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
     public int prestiegeLevel, prestiegeCountNeeded;
     public Slider prestiegeProgressBar;
     public GameObject prestiegeButton;
+    public GameObject shop, ui;
     public int getSellMultiplier(int amount)
     {
         return Mathf.Max(1, amount / 10);
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
             progBar.SetActive(false);
         }
         
-        goldText.text = formatText(userGold);
+        goldText.text = formatText(userCoins);
         breadText.text = formatText(userBread);
         milkText.text = formatText(userMilk);
         eggText.text = formatText(userEggs);
@@ -116,7 +118,7 @@ public class GameManager : MonoBehaviour
         if(num > 1000)
         {
             float log = Mathf.Log10(num);
-            int intNum = (int)(num * 10) / 10;
+            int intNum = (int)(num / Mathf.Pow(10, log));
             return (num) + "e" + (int)log;
         }
         return "" + num;
@@ -127,25 +129,45 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Prestiege", prestiegeLevel + 1);
     }
 
+    public void OpenShop()
+    {
+        shop.SetActive(true);
+        ui.SetActive(false);
+    }
+
+    public void CloseShop()
+    {
+        shop.SetActive(false);
+        ui.SetActive(true);
+    }
+
     private void Start()
     {
-        PlayerPrefs.SetInt("Prestiege", 3);
+        PlayerPrefs.SetInt("Prestiege", 1);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {
             pShiny.SetActive(false);
+            pShiny2.SetActive(false);
+            pShiny2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 3)
         {
             pSolar.SetActive(false);
+            pSolar2.SetActive(false);
+            pSolar2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 4)
         {
             pNebula.SetActive(false);
+            pNebula2.SetActive(false);
+            pNebula2.transform.parent.GetComponent<Button>().interactable = true;
         }
         if(prestiegeLevel >= 5)
         {
             pTachyon.SetActive(false);
+            pTachyon2.SetActive(false);
+            pTachyon2.transform.parent.GetComponent<Button>().interactable = true;
         }
 
         prestiegeCountNeeded = (6 - prestiegeLevel) * 50;
@@ -170,15 +192,15 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building building)
     {
-        if(userGold < building.cost)
+        if(userCoins < building.cost)
         {
             return;
         }
         
-        userGold -= building.cost;
+        userCoins -= building.cost;
         buildingToPlace = building;
         buildingCursor.gameObject.SetActive(true);
-        buildingCursor.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
+        buildingCursor.GetComponent<SpriteRenderer>().sprite = building.sprite;
         Cursor.visible = false;
         Tile.placing = true;
     }
@@ -195,53 +217,53 @@ public class GameManager : MonoBehaviour
     {
         int amount = getSellMultiplier(userWheat);
         userWheat -= amount;
-        userGold += amount;
+        userCoins += amount;
     }
 
     public void SellMilk()
     {
         int amount = getSellMultiplier(userMilk);
         userMilk -= amount;
-        userGold += amount;
+        userCoins += amount;
     }
 
     public void SellEggs()
     {
         int amount = getSellMultiplier(userEggs);
         userEggs -= amount;
-        userGold += amount;
+        userCoins += amount;
     }
     public void SellBread()
     {
         int amount = getSellMultiplier(userBread);
         userBread -= amount;
-        userGold += amount * 10;
+        userCoins += amount * 10;
     }
     public void SellShiny()
     {
         int amount = getSellMultiplier(userShinyBread);
         userShinyBread -= amount;
-        userGold += amount * 100;
+        userCoins += amount * 100;
     }
 
     public void SellSolar()
     {
         int amount = getSellMultiplier(userSolarBread);
         userSolarBread -= amount;
-        userGold += amount * 1000;
+        userCoins += amount * 1000;
     }
 
     public void SellNebula()
     {
         int amount = getSellMultiplier(userNebulaBread);
         userNebulaBread -= amount;
-        userGold += amount * 10000;
+        userCoins += amount * 10000;
     }
 
     public void SellTachyon()
     {
         int amount = getSellMultiplier(userTachyonBread);
         userTachyonBread -= amount;
-        userGold += amount * 100000;
+        userCoins += amount * 100000;
     }
 }

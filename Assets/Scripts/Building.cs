@@ -7,12 +7,19 @@ public class Building : MonoBehaviour
     public int cost, buildingType;
     public const int TYPE_WHEAT_FARM = 1, TYPE_MILK_FARM = 2, TYPE_EGG_FARM = 3, TYPE_BREAD_FACTORY = 4;
     public const int TYPE_NEB_FACTORY = 5, TYPE_SOL_FACTORY = 6, TYPE_SHINY_FACTORY = 7, TYPE_TACHYON_FACTORY = 8;
+    public const int TYPE_GOLD_MINE = 9, TYPE_SOLAR_PANEL = 10, TYPE_METEOR_MINE = 11, TYPE_ACCELERATOR = 12;
     public float timer;
-    public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5;
+    public static float wheatGenTime = 15, eggGenTime = 5, milkGenTime = 5, breadGenTime = 5, resourceGenTime = 5;
     public static GameManager gameMgr;
+    public Sprite sprite;
     void Start()
     {
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>();
+        wheatGenTime = 15.0f / gameMgr.prestiegeLevel;
+        eggGenTime = 5.0f / gameMgr.prestiegeLevel;
+        milkGenTime = 5.0f / gameMgr.prestiegeLevel;
+        breadGenTime = 5.0f / gameMgr.prestiegeLevel;
+        resourceGenTime = 5.0f / gameMgr.prestiegeLevel;
     }
 
     public float GetProgress()
@@ -38,8 +45,19 @@ public class Building : MonoBehaviour
                 break;
             }
             case TYPE_BREAD_FACTORY:
+            case TYPE_NEB_FACTORY:
+            case TYPE_SHINY_FACTORY:
+            case TYPE_SOL_FACTORY:
             {
                 denominator = breadGenTime;
+                break;
+            }
+            case TYPE_GOLD_MINE:
+            case TYPE_METEOR_MINE:
+            case TYPE_SOLAR_PANEL:
+            case TYPE_ACCELERATOR:
+            {
+                denominator = resourceGenTime;
                 break;
             }
             default: break;
@@ -80,6 +98,42 @@ public class Building : MonoBehaviour
                 }
                 break;
             }
+            case TYPE_GOLD_MINE:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.userGold += 5;
+                }
+                break;
+            }
+            case TYPE_SOLAR_PANEL:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.lightJars += 5;
+                }
+                break;
+            }
+            case TYPE_METEOR_MINE:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.cosmicShards += 5;
+                }
+                break;
+            }
+            case TYPE_ACCELERATOR:
+            {
+                if(timer < 0)
+                {
+                    timer = resourceGenTime;
+                    gameMgr.tachyonParticle += 5;
+                }
+                break;
+            }
             case TYPE_BREAD_FACTORY:
             {
                 if(timer < 0)
@@ -106,11 +160,12 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userBread >= 3)
+                    if(gameMgr.userBread >= 3 && gameMgr.userGold >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userShinyBread++;
                         
+                        gameMgr.userGold -= 1;
                         gameMgr.userBread -= 3;
                         if(gameMgr.prestiegeLevel == 2)
                         {
@@ -125,11 +180,12 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userShinyBread >= 3)
+                    if(gameMgr.userShinyBread >= 3 && gameMgr.lightJars >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userSolarBread++;
 
+                        gameMgr.lightJars -= 1;
                         gameMgr.userShinyBread -= 3;
                         if(gameMgr.prestiegeLevel == 3)
                         {
@@ -144,10 +200,11 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userSolarBread >= 3)
+                    if(gameMgr.userSolarBread >= 3 && gameMgr.cosmicShards >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userNebulaBread++;
+                        gameMgr.cosmicShards -= 1;
 
                         gameMgr.userSolarBread -= 3;
                         if(gameMgr.prestiegeLevel == 4)
@@ -163,12 +220,13 @@ public class Building : MonoBehaviour
                 if(timer < 0)
                 {
                     timer += Time.deltaTime;
-                    if(gameMgr.userNebulaBread >= 3)
+                    if(gameMgr.userNebulaBread >= 3 && gameMgr.tachyonParticle >= 1)
                     {
                         timer = breadGenTime;
                         gameMgr.userTachyonBread++;
 
                         gameMgr.userNebulaBread -= 3;
+                        gameMgr.tachyonParticle -= 1;
                         if(gameMgr.prestiegeLevel == 5)
                         {
                             gameMgr.userPrestiegeCount++;

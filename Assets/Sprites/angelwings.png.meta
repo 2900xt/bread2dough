@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02fe54f8583dab409f38b89f34dc26f
+guid: 2ec94b1d44e50584dbee23a2312f3cd2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,19 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tachyon_0
+      name: angelwings_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 298
-        height: 293
+        x: 17
+        y: 14
+        width: 338
+        height: 297
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +137,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd487af6d7892548a5bbd2e44038ade
-      internalID: 807761276
+      spriteID: ab9575872f997bd40a1cd3ea9db33dba
+      internalID: 622007161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angelwings_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 14
+        width: 338
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75424d5d202dd4f4fadd4130e864ad6a
+      internalID: 318888252
       vertices: []
       indices: 
       edges: []
@@ -167,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tachyon_0: 807761276
+      angelwings_0: 622007161
+      angelwings_1: 318888252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

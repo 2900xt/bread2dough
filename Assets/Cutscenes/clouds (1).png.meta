@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02fe54f8583dab409f38b89f34dc26f
+guid: a09f8d97f81f8044d9cc85cdaef70766
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,19 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,12 +123,75 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tachyon_0
+      name: clouds (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 298
+        x: 107
+        y: 763
+        width: 485
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834e9b52a4e771945b0fd93f453d0cf0
+      internalID: 263136391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clouds (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 734
+        width: 629
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f37889fa8185fa41b51c95b2a6a1dc6
+      internalID: -1925835760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clouds (1)_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 355
+        width: 934
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879c1b75b9928bf46893a6bed5e6fa97
+      internalID: -1060194320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clouds (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 247
+        width: 475
         height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd487af6d7892548a5bbd2e44038ade
-      internalID: 807761276
+      spriteID: 08c646d4b9d75224d93cc1675320a16b
+      internalID: -4686993
       vertices: []
       indices: 
       edges: []
@@ -167,7 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tachyon_0: 807761276
+      clouds (1)_0: 263136391
+      clouds (1)_1: -1925835760
+      clouds (1)_2: -1060194320
+      clouds (1)_3: -4686993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

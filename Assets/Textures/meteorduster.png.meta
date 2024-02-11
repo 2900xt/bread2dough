@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02fe54f8583dab409f38b89f34dc26f
+guid: 1b4b2d81f0c68e7498e998f889ea6adf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tachyon_0
+      name: meteorduster_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 298
-        height: 293
+        x: 47
+        y: 32
+        width: 585
+        height: 579
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +150,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd487af6d7892548a5bbd2e44038ade
-      internalID: 807761276
+      spriteID: c9f9e7d896e579844ae6527f62fbf87f
+      internalID: 2027234823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteorduster_1
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 365
+        width: 386
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88108598a0767bb4bbf16270c6a98bcb
+      internalID: -498902495
       vertices: []
       indices: 
       edges: []
@@ -167,7 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tachyon_0: 807761276
+      meteorduster_0: 2027234823
+      meteorduster_1: -498902495
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

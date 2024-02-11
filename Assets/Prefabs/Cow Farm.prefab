@@ -559,6 +559,7 @@ MonoBehaviour:
   cost: 10
   buildingType: 2
   timer: 0
+  sprite: {fileID: 21300000, guid: 8ec10956dc47f45438830c99784914b6, type: 3}
 --- !u!1 &5793528347478975308
 GameObject:
   m_ObjectHideFlags: 0
