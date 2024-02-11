@@ -153,10 +153,10 @@ public class GameManager : MonoBehaviour
         prestiegeLevel++;
         if(prestiegeLevel == 6)
         {
-            SceneManager.LoadScene("CutsceneEnd");
+            GameObject.Find("Fader").GetComponent<DirectorSceneLoader>().LoadScene(7);
             return;
         }
-        SceneManager.LoadScene("Cutscene" + prestiegeLevel);
+         GameObject.Find("Fader").GetComponent<DirectorSceneLoader>().LoadScene(prestiegeLevel+1);
     }
 
     public void OpenShop()

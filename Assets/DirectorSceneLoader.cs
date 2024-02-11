@@ -21,14 +21,14 @@ public class DirectorSceneLoader : MonoBehaviour
     {
         if(cutscene){director.stopped += OnPlayableDirectorStopped;}
         fader =  GameObject.Find("Fader");
-        faderAnim = fader.transform.GetChild(0).GetComponent<Animator>();
+        faderAnim = fader.GetComponent<Animator>();
     }
 
     void OnPlayableDirectorStopped(PlayableDirector aDirector)
     {
         if(director == aDirector){
             PlayerPrefs.SetInt("Prestiege", PresteigetoLoad);
-            SceneManager.LoadScene(2);
+            LoadScene(2);
         }
     }
 
