@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 
@@ -131,7 +132,13 @@ public class GameManager : MonoBehaviour
 
     public void DoPrestiege()
     {
-        PlayerPrefs.SetInt("Prestiege", prestiegeLevel + 1);
+        prestiegeLevel++;
+        if(prestiegeLevel == 6)
+        {
+            SceneManager.LoadScene("CutsceneEnd");
+            return;
+        }
+        SceneManager.LoadScene("Cutscene" + prestiegeLevel);
     }
 
     public void OpenShop()
@@ -148,7 +155,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Prestiege", 3);
         prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
         if(prestiegeLevel >= 2)
         {

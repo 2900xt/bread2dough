@@ -3645,7 +3645,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 501106026}
   m_OnClick:
     m_PersistentCalls:
@@ -6833,7 +6833,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 907984636}
   m_OnClick:
     m_PersistentCalls:
@@ -14744,7 +14744,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1407564807}
   m_OnClick:
     m_PersistentCalls:
@@ -16613,7 +16613,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1610491557}
   m_OnClick:
     m_PersistentCalls:
@@ -23376,7 +23376,7 @@ MonoBehaviour:
   userNebulaBread: 0
   userTachyonBread: 0
   userPrestiegeCount: 0
-  userGold: 100
+  userGold: 0
   lightJars: 0
   cosmicShards: 0
   tachyonParticle: 0

@@ -44,4 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75d364364de8ef44867563768579f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - clip: {fileID: 8300000, guid: a569207cae9e3284e9cb933046dd8828, type: 3}
+    name: 
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a05962f7164165e469160dd3bb8c56e3, type: 3}
+    name: 
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: a144189250d169a4e80bfe4c6ea12e6c, type: 3}
+    name: 
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 166e1f5976e98fe4198646911923bffd, type: 3}
+    name: 
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
