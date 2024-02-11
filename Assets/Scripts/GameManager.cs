@@ -7,15 +7,18 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int userGold, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegePoints;
-    public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText, shinyBreadText, solarBreadText, nebulaBreadText, tachyonBreadText;
+    public int userGold, userWheat, userEggs, userMilk, userBread, userShinyBread, userSolarBread, userNebulaBread, userTachyonBread, userPrestiegeCount;
+    public TextMeshProUGUI goldText, wheatText, eggText, milkText, breadText, shinyBreadText, solarBreadText, nebulaBreadText, tachyonBreadText, prestiegePercent;
     public TextMeshProUGUI wheatSell, milkSell, eggSell, breadSell, shinySell, solarSell, nebulaSell, tachyonSell;
     public CustomCursor buildingCursor, progressCursor;
     public GameObject gridParent, tilePrefab, progBar;
+    public GameObject pShiny, pSolar, pNebula, pTachyon;
     public Building buildingToPlace;
     public List<Tile> tiles;
     public int tileSize, tileStartX, tileStartY, gridXLength, gridYLength;
-    public int prestiege;
+    public int prestiegeLevel, prestiegeCountNeeded;
+    public Slider prestiegeProgressBar;
+    public GameObject prestiegeButton;
     public int getSellMultiplier(int amount)
     {
         return Mathf.Max(1, amount / 10);
@@ -78,6 +81,15 @@ public class GameManager : MonoBehaviour
         nebulaSell.gameObject.transform.parent.gameObject.SetActive(userNebulaBread != 0);
         tachyonSell.gameObject.transform.parent.gameObject.SetActive(userTachyonBread != 0);
         solarSell.gameObject.transform.parent.gameObject.SetActive(userSolarBread != 0);
+
+
+        float val = (float)userPrestiegeCount / prestiegeCountNeeded;
+        val = Mathf.Min(val, 1f);
+
+        prestiegePercent.text = ((int)(val * 100)) + "%";
+        prestiegeProgressBar.value = val;
+
+        prestiegeButton.SetActive(val == 1f);
     }
 
     public Tile getClosestTile(Vector2 pos)
@@ -110,18 +122,33 @@ public class GameManager : MonoBehaviour
         return "" + num;
     }
 
-    public void Prestiege()
+    public void DoPrestiege()
     {
-        PlayerPrefs.SetInt("Prestiege", prestiege + 1);
+        PlayerPrefs.SetInt("Prestiege", prestiegeLevel + 1);
     }
 
     private void Start()
     {
-        prestiege = PlayerPrefs.GetInt("Prestiege");
-        if(prestiege >= 2)
+        PlayerPrefs.SetInt("Prestiege", 3);
+        prestiegeLevel = PlayerPrefs.GetInt("Prestiege");
+        if(prestiegeLevel >= 2)
         {
-            
+            pShiny.SetActive(false);
         }
+        if(prestiegeLevel >= 3)
+        {
+            pSolar.SetActive(false);
+        }
+        if(prestiegeLevel >= 4)
+        {
+            pNebula.SetActive(false);
+        }
+        if(prestiegeLevel >= 5)
+        {
+            pTachyon.SetActive(false);
+        }
+
+        prestiegeCountNeeded = (6 - prestiegeLevel) * 50;
         
         SpawnTiles();
     }
