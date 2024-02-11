@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     {
         return Mathf.Max(1, amount / 10);
     }
+
+    public void PlayClick()
+    {
+        GetComponent<AudioSource>().Play();
+    }
     private void Update()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,8 +44,16 @@ public class GameManager : MonoBehaviour
 
         if(nearestTile != null)
         {
-            if(Input.GetMouseButtonDown(0) && buildingToPlace != null && !nearestTile.isOccupied)
+            if(Input.GetKeyDown(KeyCode.Escape) && buildingToPlace != null)
             {
+                buildingToPlace = null;
+                buildingCursor.gameObject.SetActive(false);
+                Cursor.visible = true;
+                Tile.placing = false;
+            }
+            else if(Input.GetMouseButtonDown(0) && buildingToPlace != null && !nearestTile.isOccupied)
+            {
+                PlayClick();
                 Building bd = Instantiate(buildingToPlace, nearestTile.transform.position + new Vector3(0, 0, 1), Quaternion.identity).GetComponent<Building>();
                 nearestTile.isOccupied = true;
                 nearestTile.building = bd;
@@ -148,12 +161,14 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        PlayClick();
         shop.SetActive(true);
         ui.SetActive(false);
     }
 
     public void CloseShop()
     {
+        PlayClick();
         shop.SetActive(false);
         ui.SetActive(true);
     }
@@ -212,6 +227,7 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building building)
     {
+        PlayClick();
         if(userCoins < building.cost)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -237,63 +253,88 @@ public class GameManager : MonoBehaviour
 
     public void SellWheat()
     {
+        PlayClick();
         int amount = getSellMultiplier(userWheat);
         userWheat -= amount;
         userCoins += amount;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellMilk()
     {
+        PlayClick();
         int amount = getSellMultiplier(userMilk);
         userMilk -= amount;
         userCoins += amount * 3;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 3), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellEggs()
     {
+        PlayClick();
         int amount = getSellMultiplier(userEggs);
         userEggs -= amount;
         userCoins += amount * 3;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 3), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
     public void SellBread()
     {
+        PlayClick();
         int amount = getSellMultiplier(userBread);
         userBread -= amount;
         userCoins += amount * 8;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 8), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
     public void SellShiny()
     {
+        PlayClick();
         int amount = getSellMultiplier(userShinyBread);
         userShinyBread -= amount;
         userCoins += amount * 20;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 20), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellSolar()
     {
+        PlayClick();
         int amount = getSellMultiplier(userSolarBread);
         userSolarBread -= amount;
         userCoins += amount * 65;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 65), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellNebula()
     {
+        PlayClick();
         int amount = getSellMultiplier(userNebulaBread);
         userNebulaBread -= amount;
         userCoins += amount * 175;
+        
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 175), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellTachyon()
     {
+        PlayClick();
         int amount = getSellMultiplier(userTachyonBread);
         userTachyonBread -= amount;
         userCoins += amount * 450;
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        popupText("+ $" + (amount * 450), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void popupText(string s, Vector2 v, Color c)
     {
-        
         TextMeshPro g = Instantiate(popup, new Vector3(v.x, v.y, -5), Quaternion.identity).transform.GetChild(0).GetComponent<TextMeshPro>();
-        g.color = new Color(1f,0f,0f,1f);
+        g.color = c;
         g.text = s;
     }
 }
