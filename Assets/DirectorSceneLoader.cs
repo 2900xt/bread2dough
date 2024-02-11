@@ -8,6 +8,7 @@ public class DirectorSceneLoader : MonoBehaviour
 {
 
     public bool cutscene = false;
+    public int PresteigetoLoad;
     public PlayableDirector director;
 
     void OnEnable()
@@ -18,7 +19,7 @@ public class DirectorSceneLoader : MonoBehaviour
     void OnPlayableDirectorStopped(PlayableDirector aDirector)
     {
         if(director == aDirector){
-            PlayerPrefs.SetInt("Presteige", 1);
+            PlayerPrefs.SetInt("Presteige", PresteigetoLoad);
             SceneManager.LoadScene(2);
         }
     }

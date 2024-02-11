@@ -5593,6 +5593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscene: 1
+  PresteigetoLoad: 1
   director: {fileID: 333507163}
 --- !u!1 &388433364
 GameObject:
