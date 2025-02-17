@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public GameObject prestiegeButton;
     public GameObject shop, ui;
     public bool deletingTile;
+    public bool sellState = true;
+
     public int getSellMultiplier(int amount)
     {
         return Mathf.Max(1, amount / 10);
@@ -50,6 +52,50 @@ public class GameManager : MonoBehaviour
             Destroy(nearestTile.building.gameObject);
             deletingTile = false;
             Cursor.visible = true;
+        }
+
+        if (sellState == true)
+        {
+            if (Input.GetKeyDown(KeyCode.W) && userWheat != 0)
+            {
+                SellWheat();
+            }
+
+            if (Input.GetKeyDown(KeyCode.M) && userMilk != 0)
+            {
+                SellMilk();
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) && userEggs != 0)
+            {
+                SellEggs();
+            }
+
+            if (Input.GetKeyDown(KeyCode.B) && userBread != 0)
+            {
+                SellBread();
+            }
+
+            if (Input.GetKeyDown(KeyCode.S) && userShinyBread != 0)
+            {
+                SellShiny();
+            }
+
+            if (Input.GetKeyDown(KeyCode.O) && userSolarBread != 0)
+            {
+                SellSolar();
+            }
+
+            if (Input.GetKeyDown(KeyCode.N) && userNebulaBread != 0)
+            {
+                SellNebula();
+            }
+
+            if (Input.GetKeyDown(KeyCode.T) && userTachyonBread != 0)
+            {
+                SellTachyon();
+            }
+
         }
 
         if(nearestTile != null)
@@ -96,14 +142,14 @@ public class GameManager : MonoBehaviour
         nebulaBreadText.text = formatText(userNebulaBread);
         tachyonBreadText.text = formatText(userTachyonBread);
         
-        wheatSell.text = "Sell " + formatText(getSellMultiplier(userWheat)) + "x";
-        milkSell.text = "Sell " + formatText(getSellMultiplier(userMilk)) + "x";
-        eggSell.text = "Sell " + formatText(getSellMultiplier(userEggs)) + "x";
-        breadSell.text = "Sell " + formatText(getSellMultiplier(userBread)) + "x";
-        shinySell.text = "Sell " + formatText(getSellMultiplier(userShinyBread)) + "x";
-        solarSell.text = "Sell " + formatText(getSellMultiplier(userSolarBread)) + "x";
-        nebulaSell.text = "Sell " + formatText(getSellMultiplier(userNebulaBread)) + "x";
-        tachyonSell.text = "Sell " + formatText(getSellMultiplier(userTachyonBread)) + "x";
+        wheatSell.text = "w to Sell " + formatText(getSellMultiplier(userWheat)) + "x";
+        milkSell.text = "m to Sell " + formatText(getSellMultiplier(userMilk)) + "x";
+        eggSell.text = "e to Sell " + formatText(getSellMultiplier(userEggs)) + "x";
+        breadSell.text = "b to Sell " + formatText(getSellMultiplier(userBread)) + "x";
+        shinySell.text = "s to Sell " + formatText(getSellMultiplier(userShinyBread)) + "x";
+        solarSell.text = "o to Sell " + formatText(getSellMultiplier(userSolarBread)) + "x";
+        nebulaSell.text = "n to Sell " + formatText(getSellMultiplier(userNebulaBread)) + "x";
+        tachyonSell.text = "t to Sell " + formatText(getSellMultiplier(userTachyonBread)) + "x";
 
         wheatSell.gameObject.transform.parent.gameObject.SetActive(userWheat != 0);
         milkSell.gameObject.transform.parent.gameObject.SetActive(userMilk != 0);
@@ -175,6 +221,7 @@ public class GameManager : MonoBehaviour
         PlayClick();
         shop.SetActive(true);
         ui.SetActive(false);
+        sellState = false;
     }
 
     public void CloseShop()
@@ -182,6 +229,7 @@ public class GameManager : MonoBehaviour
         PlayClick();
         shop.SetActive(false);
         ui.SetActive(true);
+        sellState = true;
     }
 
     private void Start()
@@ -272,12 +320,12 @@ public class GameManager : MonoBehaviour
 
     public void SellWheat()
     {
-        PlayClick();
-        int amount = getSellMultiplier(userWheat);
-        userWheat -= amount;
-        userCoins += amount;
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        popupText("+ $" + (amount), mousePosition, new Color(0f, 1f, 0f, 1f));
+            PlayClick();
+            int amount = getSellMultiplier(userWheat);
+            userWheat -= amount;
+            userCoins += amount;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            popupText("+ $" + (amount), mousePosition, new Color(0f, 1f, 0f, 1f));
     }
 
     public void SellMilk()

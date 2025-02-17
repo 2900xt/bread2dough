@@ -1566,7 +1566,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &263346139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4595,7 +4595,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &592875596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13362,7 +13362,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1133127090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16601,7 +16601,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1571152508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16756,7 +16756,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1578061727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17024,7 +17024,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1593549040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17351,7 +17351,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1623676161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18541,7 +18541,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1877375547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23989,6 +23989,7 @@ MonoBehaviour:
   shop: {fileID: 526927496}
   ui: {fileID: 1454757700}
   deletingTile: 0
+  sellState: 0
 --- !u!4 &1984192384
 Transform:
   m_ObjectHideFlags: 0
