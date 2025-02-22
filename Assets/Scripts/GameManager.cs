@@ -54,6 +54,18 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (sellState)
+            {
+                OpenShop();
+            }
+            else
+            {
+                CloseShop();
+            }
+        }
+
         if (sellState == true)
         {
             if (Input.GetKeyDown(KeyCode.W) && userWheat != 0)
